@@ -1,7 +1,13 @@
-#ifndef _LISTS_
-#define _LISTS_
+#ifndef LISTS_H
+#define LISTS_H
 
-#include <stdio.h>
+/*
+ * File: lists.h
+ * Auth: Brennan D Baraban
+ * Desc: Header file containing prototypes and definitions for all functions
+ *       and types written in the 0x13-more_singly_linked_lists directory.
+ */
+
 #include <stdlib.h>
 
 /**
@@ -12,30 +18,15 @@
  * Description: singly linked list node structure
  * for Holberton project
  */
-
 typedef struct listint_s
 {
 	int n;
 	struct listint_s *next;
-} listint_t
-
-/**
- * struct listp_s - singly linked list
- * @p: poiters of nodes
- *
- * Description: singly linked list of pointers
- */
-
-typedef struct listp_s
-{
-	void *p;
-	stuct listp_s *next;
-
-} listp_t;
+} listint_t;
 
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
-size_t listint_len(const listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
 listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 void free_listint2(listint_t **head);
@@ -49,6 +40,4 @@ size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
 
-
-#endif
-
+#endif /* LISTS_H */
